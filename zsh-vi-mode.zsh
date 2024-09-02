@@ -1079,7 +1079,8 @@ function zvm_vi_opp_case() {
 
 # Yank characters of the visual selection
 function zvm_vi_yank() {
-  zvm_yank
+	zvm_yank
+	printf %s "${CUTBUFFER}" | xclip -sel c
   zvm_exit_visual_mode ${1:-true}
 }
 
