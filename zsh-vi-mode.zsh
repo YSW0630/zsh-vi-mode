@@ -1213,6 +1213,7 @@ function zvm_vi_replace_selection() {
 # Delete characters of the visual selection
 function zvm_vi_delete() {
   zvm_replace_selection
+	printf %s "${CUTBUFFER}" | xclip -sel c
   zvm_exit_visual_mode ${1:-true}
 }
 
